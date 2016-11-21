@@ -826,7 +826,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gitignore">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="423" column="12" selection-start-line="423" selection-start-column="12" selection-end-line="423" selection-end-column="12" />
