@@ -1,0 +1,40 @@
+Struktura globalna w main przed zmianami:
+x:1
+y:2
+z:3
+Struktura globalna w procedurze wątku 139880654812928 przed zmianami:
+x:1
+y:2
+z:3
+Struktura globalna w procedurze wątku 139880654812928 po zmianach:
+x:2
+y:3
+z:4
+Struktura lokalna w procedurze wątku 139880654812928 przed zmianami
+x:1
+y:2
+z:3
+Struktura lokalna w procedurze wątku 139880654812928 po zmianach:
+x:3
+y:4
+z:5
+Struktura globalna w procedurze wątku 139880646420224 przed zmianami:
+x:2
+y:3
+z:4
+Struktura globalna w procedurze wątku 139880646420224 po zmianach:
+x:3
+y:4
+z:5
+Struktura lokalna w procedurze wątku 139880646420224 przed zmianami
+x:2
+y:3
+z:4
+Struktura lokalna w procedurze wątku 139880646420224 po zmianach:
+x:4
+y:5
+z:6
+Struktura globalna w main po zmianach:
+x:3
+y:4
+z:5
