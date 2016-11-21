@@ -10,6 +10,12 @@
 # Unignore all dirs
 !*/
 
+# Unignore all Makefiles
+!Makefile
+
+# Unignore .gitignore
+!.gitignore
+
 ### Above combination will ignore all files without extension ###
 
 ### CMake ###
