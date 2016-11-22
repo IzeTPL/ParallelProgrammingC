@@ -20,13 +20,13 @@ int main() {
     inicjuj(&czytelnia);
 
     for (i = 0; i < 5; i++) {
-        //pthread_create(&pisarze[i], NULL, funkcja_pisarza, (void *) &czytelnia);
+        pthread_create(&pisarze[i], NULL, funkcja_pisarza, (void *) &czytelnia);
     }
     for (i = 0; i < 5; i++) {
         pthread_create(&czytelnicy[i], NULL, funkcja_czytelnika, (void *) &czytelnia);
     }
     for (i = 0; i < 5; i++) {
-        //pthread_join(pisarze[i], NULL);
+        pthread_join(pisarze[i], NULL);
     }
     for (i = 0; i < 5; i++) {
         pthread_join(czytelnicy[i], NULL);
