@@ -98,9 +98,12 @@ void inicjuj(czytelnia_t *czytelnia_p) {
     czytelnia_p->liczba_czyt = 0;
     czytelnia_p->liczba_czek_pisz = 0;
     czytelnia_p->liczba_czek_czyt = 0;
-    czytelnia_p->czytelnicy = PTHREAD_COND_INITIALIZER;
-    czytelnia_p->pisarze = PTHREAD_COND_INITIALIZER;
-    czytelnia_p->rwlock = PTHREAD_RWLOCK_INITIALIZER;
+    pthread_cond_init(&czytelnia_p->czytelnicy, NULL);
+    pthread_cond_init(&czytelnia_p->pisarze, NULL);
+    pthread_rwlock_init(&czytelnia_p->rwlock, NULL);
+    //czytelnia_p->czytelnicy = PTHREAD_COND_INITIALIZER;
+    //czytelnia_p->pisarze = PTHREAD_COND_INITIALIZER;
+    //czytelnia_p->rwlock = PTHREAD_RWLOCK_INITIALIZER;
 }
 
 void czytam(czytelnia_t *czytelnia_p) {

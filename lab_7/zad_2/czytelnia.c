@@ -62,9 +62,12 @@ void inicjuj(czytelnia_t *czytelnia_p) {
     czytelnia_p->liczba_czyt = 0;
     czytelnia_p->liczba_czek_pisz = 0;
     czytelnia_p->liczba_czek_czyt = 0;
-    czytelnia_p->czytelnicy = PTHREAD_COND_INITIALIZER;
-    czytelnia_p->pisarze = PTHREAD_COND_INITIALIZER;
-    czytelnia_p->mutex = PTHREAD_MUTEX_INITIALIZER;
+    pthread_cond_init(&czytelnia_p->czytelnicy, NULL);
+    pthread_cond_init(&czytelnia_p->pisarze, NULL);
+    pthread_mutex_init(&czytelnia_p->mutex, NULL);
+    //czytelnia_p->czytelnicy = PTHREAD_COND_INITIALIZER;
+    //czytelnia_p->pisarze = PTHREAD_COND_INITIALIZER;
+    //czytelnia_p->mutex = PTHREAD_MUTEX_INITIALIZER;
 }
 
 void czytam(czytelnia_t *czytelnia_p) {
