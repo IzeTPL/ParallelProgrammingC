@@ -26,5 +26,6 @@ add_executable(lab_5_zad_2 lab_5/zad_2/pthreads_suma.c pomiar_czasu/pomiar_czasu
 #LAB 7
 add_executable(lab_7_zad_1 lab_7/zad_1/prod_cons.c lab_7/zad_1/kolejka.c)
 add_executable(lab_7_zad_2 lab_7/zad_2/czyt_pis.c lab_7/zad_2/czytelnia.c)
+add_executable(lab_7_zad_3 lab_7/zad_3/czyt_pis.c lab_7/zad_3/czytelnia.c)
 
 
