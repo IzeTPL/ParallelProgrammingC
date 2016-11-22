@@ -23,11 +23,13 @@ int my_read_lock_lock(czytelnia_t *czytelnia_p) {
         pthread_rwlock_unlock(&czytelnia_p->rwlock);
     }
 
+    pthread_rwlock_unlock(&czytelnia_p->rwlock);
+
     pthread_rwlock_wrlock(&czytelnia_p->rwlock);
     czytelnia_p->liczba_czyt++;
     pthread_rwlock_unlock(&czytelnia_p->rwlock);
 
-    pthread_rwlock_unlock(&czytelnia_p->rwlock);
+    //pthread_rwlock_unlock(&czytelnia_p->rwlock);
 
     pthread_cond_broadcast(&czytelnia_p->czytelnicy);
 }
@@ -58,6 +60,8 @@ int my_write_lock_lock(czytelnia_t *czytelnia_p) {
 
     if(czytelnia_p->liczba_czyt + czytelnia_p->liczba_pisz > 0) {
 
+        pthread_rwlock_unlock(&czytelnia_p->rwlock);
+
         pthread_rwlock_wrlock(&czytelnia_p->rwlock);
 
         czytelnia_p->liczba_czek_pisz++;
@@ -67,11 +71,13 @@ int my_write_lock_lock(czytelnia_t *czytelnia_p) {
         pthread_rwlock_unlock(&czytelnia_p->rwlock);
     }
 
+    pthread_rwlock_unlock(&czytelnia_p->rwlock);
+
     pthread_rwlock_wrlock(&czytelnia_p->rwlock);
     czytelnia_p->liczba_pisz++;
     pthread_rwlock_unlock(&czytelnia_p->rwlock);
 
-    pthread_rwlock_unlock(&czytelnia_p->rwlock);
+    //pthread_rwlock_unlock(&czytelnia_p->rwlock);
 
 }
 
