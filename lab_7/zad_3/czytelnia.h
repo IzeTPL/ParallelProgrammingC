@@ -10,6 +10,7 @@ typedef struct {
     pthread_cond_t czytelnicy;
     pthread_cond_t pisarze;
     pthread_rwlock_t rwlock;
+	pthread_mutex_t mutex;
 } czytelnia_t;
 
 /*** Deklaracje procedur interfejsu ***/

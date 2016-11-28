@@ -47,17 +47,22 @@ void inicjuj(czytelnia_t *czytelnia_p) {
     pthread_cond_init(&czytelnia_p->czytelnicy, NULL);
     pthread_cond_init(&czytelnia_p->pisarze, NULL);
     pthread_rwlock_init(&czytelnia_p->rwlock, NULL);
+    pthread_mutex_init(&czytelnia_p->mutex, NULL);
 }
 
 void czytam(czytelnia_t *czytelnia_p) {
+    pthread_mutex_lock(&czytelnia_p->mutex);
     printf("Czytelnicy: %d\n", czytelnia_p->liczba_czyt);
     printf("Pisarze: %d\n", czytelnia_p->liczba_pisz);
+    pthread_mutex_unlock(&czytelnia_p->mutex);
     usleep(rand() % 1000000);
 }
 
 void pisze(czytelnia_t *czytelnia_p) {
+    pthread_mutex_lock(&czytelnia_p->mutex);
     printf("Czytelnicy: %d\n", czytelnia_p->liczba_czyt);
     printf("Pisarze: %d\n", czytelnia_p->liczba_pisz);
+    pthread_mutex_unlock(&czytelnia_p->mutex);
     usleep(rand() % 1000000);
 }
 
