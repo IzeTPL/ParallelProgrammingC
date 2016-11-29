@@ -5,8 +5,6 @@
 typedef struct {
     int liczba_czyt;
     int liczba_pisz;
-    int liczba_czek_czyt;
-    int liczba_czek_pisz;
     pthread_cond_t czytelnicy;
     pthread_cond_t pisarze;
     pthread_rwlock_t rwlock;

@@ -63,6 +63,7 @@ void inicjuj(czytelnia_t *czytelnia_p) {
 
 void czytam(czytelnia_t *czytelnia_p) {
     pthread_mutex_lock(&czytelnia_p->mutex);
+    if(czytelnia_p->liczba_pisz > 0) pthread_exit(0);
     printf("Czytelnicy: %d\n", czytelnia_p->liczba_czyt);
     printf("Pisarze: %d\n", czytelnia_p->liczba_pisz);
     pthread_mutex_unlock(&czytelnia_p->mutex);
@@ -71,6 +72,7 @@ void czytam(czytelnia_t *czytelnia_p) {
 
 void pisze(czytelnia_t *czytelnia_p) {
     pthread_mutex_lock(&czytelnia_p->mutex);
+    if(czytelnia_p->liczba_czyt > 0 || czytelnia_p->liczba_pisz > 1) pthread_exit(0);
     printf("Czytelnicy: %d\n", czytelnia_p->liczba_czyt);
     printf("Pisarze: %d\n", czytelnia_p->liczba_pisz);
     pthread_mutex_unlock(&czytelnia_p->mutex);
