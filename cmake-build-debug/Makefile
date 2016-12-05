@@ -77,6 +77,17 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	"C:\Program Files (x86)\JetBrains\CLion 2016.2.3\bin\cmake\bin\ctest.exe" --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Marian\ClionProjects\parallelprogrammingc\cmake-build-debug\CMakeFiles C:\Users\Marian\ClionProjects\parallelprogrammingc\cmake-build-debug\CMakeFiles\progress.marks
@@ -277,6 +288,32 @@ lab_7_zad_2: cmake_check_build_system
 lab_7_zad_2/fast:
 	$(MAKE) -f CMakeFiles\lab_7_zad_2.dir\build.make CMakeFiles/lab_7_zad_2.dir/build
 .PHONY : lab_7_zad_2/fast
+
+#=============================================================================
+# Target rules for targets named lab_9_zad_1
+
+# Build rule for target.
+lab_9_zad_1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 lab_9_zad_1
+.PHONY : lab_9_zad_1
+
+# fast build rule for target.
+lab_9_zad_1/fast:
+	$(MAKE) -f CMakeFiles\lab_9_zad_1.dir\build.make CMakeFiles/lab_9_zad_1.dir/build
+.PHONY : lab_9_zad_1/fast
+
+#=============================================================================
+# Target rules for targets named lab_9_zad_2
+
+# Build rule for target.
+lab_9_zad_2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 lab_9_zad_2
+.PHONY : lab_9_zad_2
+
+# fast build rule for target.
+lab_9_zad_2/fast:
+	$(MAKE) -f CMakeFiles\lab_9_zad_2.dir\build.make CMakeFiles/lab_9_zad_2.dir/build
+.PHONY : lab_9_zad_2/fast
 
 lab_1/moj_program.obj: lab_1/moj_program.c.obj
 
@@ -710,6 +747,60 @@ lab_7/zad_3/czytelnia.c.s:
 	$(MAKE) -f CMakeFiles\lab_7_zad_3.dir\build.make CMakeFiles/lab_7_zad_3.dir/lab_7/zad_3/czytelnia.c.s
 .PHONY : lab_7/zad_3/czytelnia.c.s
 
+lab_9/zad_1/openmp_watki_zmienne.obj: lab_9/zad_1/openmp_watki_zmienne.c.obj
+
+.PHONY : lab_9/zad_1/openmp_watki_zmienne.obj
+
+# target to build an object file
+lab_9/zad_1/openmp_watki_zmienne.c.obj:
+	$(MAKE) -f CMakeFiles\lab_9_zad_1.dir\build.make CMakeFiles/lab_9_zad_1.dir/lab_9/zad_1/openmp_watki_zmienne.c.obj
+.PHONY : lab_9/zad_1/openmp_watki_zmienne.c.obj
+
+lab_9/zad_1/openmp_watki_zmienne.i: lab_9/zad_1/openmp_watki_zmienne.c.i
+
+.PHONY : lab_9/zad_1/openmp_watki_zmienne.i
+
+# target to preprocess a source file
+lab_9/zad_1/openmp_watki_zmienne.c.i:
+	$(MAKE) -f CMakeFiles\lab_9_zad_1.dir\build.make CMakeFiles/lab_9_zad_1.dir/lab_9/zad_1/openmp_watki_zmienne.c.i
+.PHONY : lab_9/zad_1/openmp_watki_zmienne.c.i
+
+lab_9/zad_1/openmp_watki_zmienne.s: lab_9/zad_1/openmp_watki_zmienne.c.s
+
+.PHONY : lab_9/zad_1/openmp_watki_zmienne.s
+
+# target to generate assembly for a file
+lab_9/zad_1/openmp_watki_zmienne.c.s:
+	$(MAKE) -f CMakeFiles\lab_9_zad_1.dir\build.make CMakeFiles/lab_9_zad_1.dir/lab_9/zad_1/openmp_watki_zmienne.c.s
+.PHONY : lab_9/zad_1/openmp_watki_zmienne.c.s
+
+lab_9/zad_2/openmp_petle.obj: lab_9/zad_2/openmp_petle.c.obj
+
+.PHONY : lab_9/zad_2/openmp_petle.obj
+
+# target to build an object file
+lab_9/zad_2/openmp_petle.c.obj:
+	$(MAKE) -f CMakeFiles\lab_9_zad_2.dir\build.make CMakeFiles/lab_9_zad_2.dir/lab_9/zad_2/openmp_petle.c.obj
+.PHONY : lab_9/zad_2/openmp_petle.c.obj
+
+lab_9/zad_2/openmp_petle.i: lab_9/zad_2/openmp_petle.c.i
+
+.PHONY : lab_9/zad_2/openmp_petle.i
+
+# target to preprocess a source file
+lab_9/zad_2/openmp_petle.c.i:
+	$(MAKE) -f CMakeFiles\lab_9_zad_2.dir\build.make CMakeFiles/lab_9_zad_2.dir/lab_9/zad_2/openmp_petle.c.i
+.PHONY : lab_9/zad_2/openmp_petle.c.i
+
+lab_9/zad_2/openmp_petle.s: lab_9/zad_2/openmp_petle.c.s
+
+.PHONY : lab_9/zad_2/openmp_petle.s
+
+# target to generate assembly for a file
+lab_9/zad_2/openmp_petle.c.s:
+	$(MAKE) -f CMakeFiles\lab_9_zad_2.dir\build.make CMakeFiles/lab_9_zad_2.dir/lab_9/zad_2/openmp_petle.c.s
+.PHONY : lab_9/zad_2/openmp_petle.c.s
+
 pomiar_czasu/pomiar_czasu.obj: pomiar_czasu/pomiar_czasu.c.obj
 
 .PHONY : pomiar_czasu/pomiar_czasu.obj
@@ -760,7 +851,10 @@ help:
 	@echo ... lab_5_zad_2
 	@echo ... lab_7_zad_1
 	@echo ... lab_7_zad_2
+	@echo ... lab_9_zad_1
+	@echo ... lab_9_zad_2
 	@echo ... rebuild_cache
+	@echo ... test
 	@echo ... lab_1/moj_program.obj
 	@echo ... lab_1/moj_program.i
 	@echo ... lab_1/moj_program.s
@@ -809,6 +903,12 @@ help:
 	@echo ... lab_7/zad_3/czytelnia.obj
 	@echo ... lab_7/zad_3/czytelnia.i
 	@echo ... lab_7/zad_3/czytelnia.s
+	@echo ... lab_9/zad_1/openmp_watki_zmienne.obj
+	@echo ... lab_9/zad_1/openmp_watki_zmienne.i
+	@echo ... lab_9/zad_1/openmp_watki_zmienne.s
+	@echo ... lab_9/zad_2/openmp_petle.obj
+	@echo ... lab_9/zad_2/openmp_petle.i
+	@echo ... lab_9/zad_2/openmp_petle.s
 	@echo ... pomiar_czasu/pomiar_czasu.obj
 	@echo ... pomiar_czasu/pomiar_czasu.i
 	@echo ... pomiar_czasu/pomiar_czasu.s
