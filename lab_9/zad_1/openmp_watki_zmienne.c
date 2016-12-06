@@ -11,8 +11,8 @@ int main(){
   printf("\nKompilator rozpoznaje dyrektywy OpenMP\n");
 #endif
 
-  //int liczba_watkow = 33;
-  //omp_set_num_threads(liczba_watkow);
+  int liczba_watkow = 7;
+  omp_set_num_threads(liczba_watkow);
   
   int a_shared = 1;
   int b_private = 2;
@@ -33,9 +33,12 @@ int main(){
     int d_local_private;
     d_local_private = a_shared + c_firstprivate;
     f_threadprivate = omp_get_thread_num();
-
-    for (i = 0; i < 10; i++) {
-      a_shared++;
+#pragma omp barrier
+#pragma omp critical
+    {
+      for (i = 0; i < 10; i++) {
+        a_shared++;
+      }
     }
 
     for (i = 0; i < 10; i++) {
@@ -47,6 +50,7 @@ int main(){
       e_atomic += omp_get_thread_num();
     }
 
+#pragma omp barrier
 #pragma omp critical
     {
       printf("\nw obszarze równoległym: aktualna liczba watkow %d, moj ID %d\n",
@@ -59,30 +63,6 @@ int main(){
       printf("\te_atomic \t= %d\n", e_atomic);
 
     }
-
-    //#pragma omp single
-/* #pragma omp master */
-/*         { */
-    
-/*           printf("\ninside single: nr_threads %d, thread ID %d\n", */
-/*     	     omp_get_num_threads(), omp_get_thread_num()); */
-/*           /\* Get environment information *\/ */
-/*           int procs = omp_get_num_procs(); */
-/*           int nthreads = omp_get_num_threads(); */
-/*           int maxt = omp_get_max_threads(); */
-/*           int inpar = omp_in_parallel(); */
-/*           int dynamic = omp_get_dynamic(); */
-/*           int nested = omp_get_nested(); */
-    
-/*           /\* Print environment information *\/ */
-/*           printf("Number of processors = %d\n", procs); */
-/*           printf("Number of threads = %d\n", nthreads); */
-/*           printf("Max threads = %d\n", maxt); */
-/*           printf("In parallel? = %d\n", inpar); */
-/*           printf("Dynamic threads enabled? = %d\n", dynamic); */
-/*           printf("Nested parallelism supported? = %d\n", nested); */
-    
-/*         } */
     
   }
 
@@ -102,5 +82,5 @@ int main(){
   printf("\tb_private \t= %d\n", b_private);
   printf("\tc_firstprivate \t= %d\n", c_firstprivate);
   printf("\te_atomic \t= %d\n", e_atomic);
-  
+
 }
