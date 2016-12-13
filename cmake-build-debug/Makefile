@@ -315,6 +315,32 @@ lab_9_zad_2/fast:
 	$(MAKE) -f CMakeFiles\lab_9_zad_2.dir\build.make CMakeFiles/lab_9_zad_2.dir/build
 .PHONY : lab_9_zad_2/fast
 
+#=============================================================================
+# Target rules for targets named lab_10_zad_1
+
+# Build rule for target.
+lab_10_zad_1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 lab_10_zad_1
+.PHONY : lab_10_zad_1
+
+# fast build rule for target.
+lab_10_zad_1/fast:
+	$(MAKE) -f CMakeFiles\lab_10_zad_1.dir\build.make CMakeFiles/lab_10_zad_1.dir/build
+.PHONY : lab_10_zad_1/fast
+
+#=============================================================================
+# Target rules for targets named lab_10_zad_2
+
+# Build rule for target.
+lab_10_zad_2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 lab_10_zad_2
+.PHONY : lab_10_zad_2
+
+# fast build rule for target.
+lab_10_zad_2/fast:
+	$(MAKE) -f CMakeFiles\lab_10_zad_2.dir\build.make CMakeFiles/lab_10_zad_2.dir/build
+.PHONY : lab_10_zad_2/fast
+
 lab_1/moj_program.obj: lab_1/moj_program.c.obj
 
 .PHONY : lab_1/moj_program.obj
@@ -341,6 +367,87 @@ lab_1/moj_program.s: lab_1/moj_program.c.s
 lab_1/moj_program.c.s:
 	$(MAKE) -f CMakeFiles\lab_1_zad_1.dir\build.make CMakeFiles/lab_1_zad_1.dir/lab_1/moj_program.c.s
 .PHONY : lab_1/moj_program.c.s
+
+lab_10/zad_1/petle.obj: lab_10/zad_1/petle.c.obj
+
+.PHONY : lab_10/zad_1/petle.obj
+
+# target to build an object file
+lab_10/zad_1/petle.c.obj:
+	$(MAKE) -f CMakeFiles\lab_10_zad_1.dir\build.make CMakeFiles/lab_10_zad_1.dir/lab_10/zad_1/petle.c.obj
+.PHONY : lab_10/zad_1/petle.c.obj
+
+lab_10/zad_1/petle.i: lab_10/zad_1/petle.c.i
+
+.PHONY : lab_10/zad_1/petle.i
+
+# target to preprocess a source file
+lab_10/zad_1/petle.c.i:
+	$(MAKE) -f CMakeFiles\lab_10_zad_1.dir\build.make CMakeFiles/lab_10_zad_1.dir/lab_10/zad_1/petle.c.i
+.PHONY : lab_10/zad_1/petle.c.i
+
+lab_10/zad_1/petle.s: lab_10/zad_1/petle.c.s
+
+.PHONY : lab_10/zad_1/petle.s
+
+# target to generate assembly for a file
+lab_10/zad_1/petle.c.s:
+	$(MAKE) -f CMakeFiles\lab_10_zad_1.dir\build.make CMakeFiles/lab_10_zad_1.dir/lab_10/zad_1/petle.c.s
+.PHONY : lab_10/zad_1/petle.c.s
+
+lab_10/zad_2/mat_vec.obj: lab_10/zad_2/mat_vec.c.obj
+
+.PHONY : lab_10/zad_2/mat_vec.obj
+
+# target to build an object file
+lab_10/zad_2/mat_vec.c.obj:
+	$(MAKE) -f CMakeFiles\lab_10_zad_2.dir\build.make CMakeFiles/lab_10_zad_2.dir/lab_10/zad_2/mat_vec.c.obj
+.PHONY : lab_10/zad_2/mat_vec.c.obj
+
+lab_10/zad_2/mat_vec.i: lab_10/zad_2/mat_vec.c.i
+
+.PHONY : lab_10/zad_2/mat_vec.i
+
+# target to preprocess a source file
+lab_10/zad_2/mat_vec.c.i:
+	$(MAKE) -f CMakeFiles\lab_10_zad_2.dir\build.make CMakeFiles/lab_10_zad_2.dir/lab_10/zad_2/mat_vec.c.i
+.PHONY : lab_10/zad_2/mat_vec.c.i
+
+lab_10/zad_2/mat_vec.s: lab_10/zad_2/mat_vec.c.s
+
+.PHONY : lab_10/zad_2/mat_vec.s
+
+# target to generate assembly for a file
+lab_10/zad_2/mat_vec.c.s:
+	$(MAKE) -f CMakeFiles\lab_10_zad_2.dir\build.make CMakeFiles/lab_10_zad_2.dir/lab_10/zad_2/mat_vec.c.s
+.PHONY : lab_10/zad_2/mat_vec.c.s
+
+lab_10/zad_2/openmp_mat_vec.obj: lab_10/zad_2/openmp_mat_vec.c.obj
+
+.PHONY : lab_10/zad_2/openmp_mat_vec.obj
+
+# target to build an object file
+lab_10/zad_2/openmp_mat_vec.c.obj:
+	$(MAKE) -f CMakeFiles\lab_10_zad_2.dir\build.make CMakeFiles/lab_10_zad_2.dir/lab_10/zad_2/openmp_mat_vec.c.obj
+.PHONY : lab_10/zad_2/openmp_mat_vec.c.obj
+
+lab_10/zad_2/openmp_mat_vec.i: lab_10/zad_2/openmp_mat_vec.c.i
+
+.PHONY : lab_10/zad_2/openmp_mat_vec.i
+
+# target to preprocess a source file
+lab_10/zad_2/openmp_mat_vec.c.i:
+	$(MAKE) -f CMakeFiles\lab_10_zad_2.dir\build.make CMakeFiles/lab_10_zad_2.dir/lab_10/zad_2/openmp_mat_vec.c.i
+.PHONY : lab_10/zad_2/openmp_mat_vec.c.i
+
+lab_10/zad_2/openmp_mat_vec.s: lab_10/zad_2/openmp_mat_vec.c.s
+
+.PHONY : lab_10/zad_2/openmp_mat_vec.s
+
+# target to generate assembly for a file
+lab_10/zad_2/openmp_mat_vec.c.s:
+	$(MAKE) -f CMakeFiles\lab_10_zad_2.dir\build.make CMakeFiles/lab_10_zad_2.dir/lab_10/zad_2/openmp_mat_vec.c.s
+.PHONY : lab_10/zad_2/openmp_mat_vec.c.s
 
 lab_2/clone.obj: lab_2/clone.c.obj
 
@@ -853,11 +960,22 @@ help:
 	@echo ... lab_7_zad_2
 	@echo ... lab_9_zad_1
 	@echo ... lab_9_zad_2
+	@echo ... lab_10_zad_1
+	@echo ... lab_10_zad_2
 	@echo ... rebuild_cache
 	@echo ... test
 	@echo ... lab_1/moj_program.obj
 	@echo ... lab_1/moj_program.i
 	@echo ... lab_1/moj_program.s
+	@echo ... lab_10/zad_1/petle.obj
+	@echo ... lab_10/zad_1/petle.i
+	@echo ... lab_10/zad_1/petle.s
+	@echo ... lab_10/zad_2/mat_vec.obj
+	@echo ... lab_10/zad_2/mat_vec.i
+	@echo ... lab_10/zad_2/mat_vec.s
+	@echo ... lab_10/zad_2/openmp_mat_vec.obj
+	@echo ... lab_10/zad_2/openmp_mat_vec.i
+	@echo ... lab_10/zad_2/openmp_mat_vec.s
 	@echo ... lab_2/clone.obj
 	@echo ... lab_2/clone.i
 	@echo ... lab_2/clone.s

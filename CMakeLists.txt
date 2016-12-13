@@ -42,4 +42,8 @@ target_link_libraries(lab_7_zad_3 ${CMAKE_THREAD_LIBS_INIT})
 add_executable(lab_9_zad_1 lab_9/zad_1/openmp_watki_zmienne.c)
 add_executable(lab_9_zad_2 lab_9/zad_2/openmp_petle.c)
 
+#LAB 10
+add_executable(lab_10_zad_1 lab_10/zad_1/petle.c)
+add_executable(lab_10_zad_2 lab_10/zad_2/openmp_mat_vec.c lab_10/zad_2/mat_vec.c)
+
 

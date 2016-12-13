@@ -51,8 +51,8 @@ printf("\n");
         printf("Iteracja %d wykonana przez watek nr. %d.\n", i, id);
     }
     printf("\n");
-    printf("GUIDED 4\n");
-#pragma omp parallel for ordered schedule(guided, 4)
+    printf("GUIDED 3\n");
+#pragma omp parallel for ordered schedule(guided, 3)
     for (int i = 0; i < 17; i++) {
         int id = omp_get_thread_num();
 #pragma omp ordered
