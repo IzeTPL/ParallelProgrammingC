@@ -29,15 +29,18 @@ int main () {
     //WIERSZOWO
 
     double suma_parallel_wierszowo = 0.0;
+    double suma_loc = 0.0;
 
-#pragma omp parallel for ordered default(none) shared(suma_parallel_wierszowo, a) private(i, j)
+#pragma omp parallel for ordered default(none) shared(suma_parallel_wierszowo, a) private(i, j, suma_loc)
         for (i = 0; i < WYMIAR; i++) {
+            suma_loc = 0.0;
             for (j = 0; j < WYMIAR; j++) {
-#pragma omp atomic
-                suma_parallel_wierszowo += a[i][j];
+                suma_loc += a[i][j];
 #pragma omp ordered
                 printf("kolumna %d, wiersz %d: watek %d\n", j, i, omp_get_thread_num());
             }
+#pragma omp atomic
+            suma_parallel_wierszowo+=suma_loc;
         }
 
     printf("Suma wyrazow tablicy rownolegle wierszowo: %lf\n", suma_parallel_wierszowo);
@@ -46,15 +49,12 @@ int main () {
 
     double suma_parallel_kolumnowo_reduction = 0.0;
 
-#pragma omp parallel default(none) shared(suma_parallel_kolumnowo_reduction, a) private(i, j)
-    {
-        for (i = 0; i < WYMIAR; i++) {
-#pragma omp for ordered reduction(+:suma_parallel_kolumnowo_reduction)
-            for (j = 0; j < WYMIAR; j++) {
-                suma_parallel_kolumnowo_reduction += a[i][j];
+    for (i = 0; i < WYMIAR; i++) {
+#pragma omp parallel for ordered reduction(+:suma_parallel_kolumnowo_reduction) private(j) shared(a) firstprivate(i)
+        for (j = 0; j < WYMIAR; j++) {
+            suma_parallel_kolumnowo_reduction += a[i][j];
 #pragma omp ordered
-                printf("kolumna %d, wiersz %d: watek %d\n", j, i, omp_get_thread_num());
-            }
+            printf("kolumna %d, wiersz %d: watek %d\n", j, i, omp_get_thread_num());
         }
     }
 
@@ -65,12 +65,11 @@ int main () {
     double suma_parallel_kolumnowo_private = 0.0;
     double sum = 0.0;
 
-#pragma omp parallel default(none) shared(suma_parallel_kolumnowo_private, a) private(i, j) firstprivate(sum)
+#pragma omp parallel default(none) shared(suma_parallel_kolumnowo_private, a) private(i, j, sum)
     {
-
+        sum = 0.0;
 #pragma omp for ordered
         for (i = 0; i < WYMIAR; i++) {
-
             for (j = 0; j < WYMIAR; j++) {
                 sum += a[j][i];
 #pragma omp ordered
@@ -78,11 +77,8 @@ int main () {
 
             }
         }
-
-#pragma omp critical
-        {
+#pragma atomic
             suma_parallel_kolumnowo_private+=sum;
-        }
 
     }
 
@@ -105,7 +101,7 @@ int main () {
 #pragma omp ordered
 #pragma omp parallel for ordered schedule(static) default(none) firstprivate(id_zewn, i) shared(a, suma_parallel_blokowo)
             for(j=0;j<WYMIAR;j++) {
-#pragma omp critical
+#pragma omp atomic
                 suma_parallel_blokowo += a[i][j];
 #pragma omp ordered
                 printf("kolumna %d, wiersz %d: watek zewn %d watek wew %d\n", j, i, id_zewn, omp_get_thread_num());

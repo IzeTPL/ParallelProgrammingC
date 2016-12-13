@@ -44,6 +44,7 @@ add_executable(lab_9_zad_2 lab_9/zad_2/openmp_petle.c)
 
 #LAB 10
 add_executable(lab_10_zad_1 lab_10/zad_1/petle.c)
+target_link_libraries(lab_10_zad_1 m)
 add_executable(lab_10_zad_2 lab_10/zad_2/openmp_mat_vec.c lab_10/zad_2/mat_vec.c)
 
 
