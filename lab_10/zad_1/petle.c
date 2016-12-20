@@ -24,9 +24,11 @@ int main () {
     printf("Suma wyrazow tablicy: %lf\n", suma);
 
     omp_set_nested(1);
-    omp_set_num_threads(5);
+    int num_threads = 5;
+    omp_set_num_threads(num_threads);
 
     //WIERSZOWO
+    printf("\nWIERSZOWO\n");
 
     double suma_parallel_wierszowo = 0.0;
     double suma_loc = 0.0;
@@ -46,6 +48,7 @@ int main () {
     printf("Suma wyrazow tablicy rownolegle wierszowo: %lf\n", suma_parallel_wierszowo);
 
     //KOLUMNOWO REDUCTION
+    printf("\nKOLUMNOWO REDUCTION\n");
 
     double suma_parallel_kolumnowo_reduction = 0.0;
 
@@ -61,6 +64,7 @@ int main () {
     printf("Suma wyrazow tablicy rownolegle kolumnowo reduction: %lf\n", suma_parallel_kolumnowo_reduction);
 
     //KOLUMNOWO PRIVATE
+    printf("\nKOLUMNOWO PRIVATE\n");
 
     double suma_parallel_kolumnowo_private = 0.0;
     double sum = 0.0;
@@ -85,12 +89,10 @@ int main () {
     printf("Suma wyrazow tablicy rownolegle kolumnowo private: %lf\n", suma_parallel_kolumnowo_private);
 
     //BLOKOWO
+    printf("\n2D\n");
 
     double suma_parallel_blokowo = 0.0;
     int id_zewn;
-    int num_threads = 4;
-
-    omp_set_num_threads(num_threads);
 
     int chunk = floor(WYMIAR/num_threads);
 #pragma omp parallel default(none) shared(a, suma_parallel_blokowo, chunk) private(i, j ,id_zewn)
@@ -104,7 +106,7 @@ int main () {
 #pragma omp atomic
                 suma_parallel_blokowo += a[i][j];
 #pragma omp ordered
-                printf("kolumna %d, wiersz %d: watek zewn %d watek wew %d\n", j, i, id_zewn, omp_get_thread_num());
+                printf("kol %d, wie %d: watek: zewn %d, wew %d\n", j, i, id_zewn, omp_get_thread_num());
             }
         }
     }

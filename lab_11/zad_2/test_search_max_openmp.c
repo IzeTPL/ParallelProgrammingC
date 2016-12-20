@@ -5,7 +5,7 @@
 
 #include "search_max_openmp.h"
 
-#define WYMIAR 1000000
+#define WYMIAR 100000000
 #define ROZMIAR WYMIAR
 
 
@@ -38,7 +38,7 @@ main ()
   a_max = search_max_openmp_task(a, 0, n-1);
   t1=omp_get_wtime()-t1;
   printf("maximal element %lf\n", a_max); 
-  printf("time for parallel linear search: %lf\n", t1);
+  printf("time for parallel task linear search: %lf\n", t1);
 
   t1=omp_get_wtime();
   a_max = bin_search_max(a, 0, n-1);

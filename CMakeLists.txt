@@ -47,4 +47,9 @@ add_executable(lab_10_zad_1 lab_10/zad_1/petle.c)
 target_link_libraries(lab_10_zad_1 m)
 add_executable(lab_10_zad_2 lab_10/zad_2/openmp_mat_vec.c lab_10/zad_2/mat_vec.c)
 
+#lab 11
+add_executable(lab_11_zad_1 lab_11/zad_1/test_sortowanie.c lab_11/zad_1/merge_sort_openmp.c lab_11/zad_1/sortowanie_seq.c)
+add_executable(lab_11_zad_2 lab_11/zad_2/test_search_max_openmp.c lab_11/zad_2/search_max_openmp.c)
+
+
 
