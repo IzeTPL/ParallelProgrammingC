@@ -36,6 +36,13 @@ double bin_search_max_openmp(
 		      int k
 		      );
 
+
+double bin_search_max_openmp2(
+		double *A,
+		int p,
+		int k
+);
+
 #ifdef __cplusplus
 }
 #endif 

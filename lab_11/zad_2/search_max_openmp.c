@@ -66,36 +66,37 @@ double search_max_openmp_task(
             int num_tasks = num_threads + 1;
             int n_loc = (int)ceil(n / num_tasks);
 
-            int itask;
-            for (itask = 0; itask < num_tasks; itask++) {
-
-                int p_task = p + itask * n_loc;
-                if (p_task > k) {
-                    printf("Error in task decomposition! Exiting.\n");
-                    exit(0);
-                }
-                int k_task = p + (itask + 1) * n_loc - 1;
-                if (itask == num_tasks - 1) k_task = k;
+				int itask;
+				for (itask = 0; itask < num_tasks; itask++) {
+						int p_task = p + itask * n_loc;
+						if (p_task > k) {
+							printf("Error in task decomposition! Exiting.\n");
+							exit(0);
+						}
+						int k_task = p + (itask + 1) * n_loc - 1;
+						if (itask == num_tasks - 1) k_task = k;
 
 #pragma omp task default(none) firstprivate(p_task, k_task, A) shared(a_max)
-                {
+						{
 
-                    double a_max_local = a_max;
-                    int i;
-                    for(i=p_task+1; i<=k_task; i++)
-                        if(a_max_local < A[i]){
-                            a_max_local = A[i];
-                        }
+							double a_max_local = a_max;
+							int i;
+							for (i = p_task + 1; i <= k_task; i++)
+								if (a_max_local < A[i]) {
+									a_max_local = A[i];
+								}
 #pragma omp critical
-                    {
-                        if(a_max_local > a_max){
-                            a_max = a_max_local;
+							{
 
-                        }
-                    }
-                } // end task definition
+								if (a_max_local > a_max) {
+									a_max = a_max_local;
+								}
 
-            } // end loop over tasks
+							}
+
+						} // end task definition
+
+					} // end loop over tasks
 
         } // end single region
 
@@ -196,6 +197,87 @@ double bin_search_max_openmp(
 #pragma omp task
             {
                 a_max = bin_search_max_task(A, p, k, 0);
+            }
+        }
+    }
+
+    return (a_max);
+}
+
+double bin_search_max_task2(
+        double *A,
+        int p,
+        int r,
+        int level
+) {
+
+
+
+    if (p < r) {
+
+        level++;
+
+        int s = (p + r) / 2;
+
+        double a_max_1;
+        double a_max_2;
+
+#pragma omp task final(level>max_level) default(none) firstprivate(A,p,s,level) shared(a_max_1)
+        {
+            if(omp_in_final()) {
+
+            a_max_1 = search_max_openmp_task(A, p, s);
+
+            } else {
+
+            a_max_1 = bin_search_max_task2(A, p, s, level);
+
+            }
+        }
+#pragma omp task final(level>max_level) default(none) firstprivate(A,r,s,level) shared(a_max_2)
+        {
+            if (omp_in_final()){
+
+                a_max_2 = search_max_openmp_task(A, s + 1, r);
+
+            } else {
+
+                a_max_2 = bin_search_max_task2(A, s + 1, r, level);
+
+            }
+        }
+        //printf("p %d  k %d, maximal elements %lf, %lf\n", p, k, a_max_1, a_max_2);
+
+#pragma omp taskwait
+
+        if (a_max_1 < a_max_2) return (a_max_2);
+        else return (a_max_1);
+
+    } else {
+
+        return (A[p]);
+
+    }
+
+}
+
+/********** parallel binary search (array not sorted) - openmp ***********/
+
+double bin_search_max_openmp2(
+        double *A,
+        int p,
+        int k
+) {
+
+    double a_max;
+
+#pragma omp parallel default(none) firstprivate(A,p,k) shared(a_max)
+    {
+#pragma omp single
+        {
+#pragma omp task
+            {
+                a_max = bin_search_max_task2(A, p, k, 0);
             }
         }
     }

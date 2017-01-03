@@ -52,6 +52,12 @@ main ()
   printf("maximal element %lf\n", a_max); 
   printf("time for parallel binary search: %lf\n", t1);
 
+  t1=omp_get_wtime();
+  a_max = bin_search_max_openmp2(a, 0, n-1);
+  t1=omp_get_wtime()-t1;
+  printf("maximal element %lf\n", a_max);
+  printf("time for parallel combined search: %lf\n", t1);
+
 }
 
 
