@@ -65,3 +65,10 @@ target_link_libraries(lab_12_zad_2 mpi)
 
 add_executable(lab_12_zad_3 lab_12/zad_3/MPI_simple.c)
 target_link_libraries(lab_12_zad_3 mpi)
+
+#lab 13
+add_executable(lab_13_zad_1 lab_13/zad_1/heat.c)
+target_link_libraries(lab_13_zad_1 mpi)
+
+add_executable(lab_13_zad_2 lab_13/zad_2/pi.c)
+target_link_libraries(lab_13_zad_2 mpi)

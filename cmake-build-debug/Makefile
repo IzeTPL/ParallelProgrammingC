@@ -122,6 +122,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named lab_13_zad_2
+
+# Build rule for target.
+lab_13_zad_2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_13_zad_2
+.PHONY : lab_13_zad_2
+
+# fast build rule for target.
+lab_13_zad_2/fast:
+	$(MAKE) -f CMakeFiles/lab_13_zad_2.dir/build.make CMakeFiles/lab_13_zad_2.dir/build
+.PHONY : lab_13_zad_2/fast
+
+#=============================================================================
+# Target rules for targets named lab_13_zad_1
+
+# Build rule for target.
+lab_13_zad_1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_13_zad_1
+.PHONY : lab_13_zad_1
+
+# fast build rule for target.
+lab_13_zad_1/fast:
+	$(MAKE) -f CMakeFiles/lab_13_zad_1.dir/build.make CMakeFiles/lab_13_zad_1.dir/build
+.PHONY : lab_13_zad_1/fast
+
+#=============================================================================
 # Target rules for targets named lab_5_zad_2
 
 # Build rule for target.
@@ -731,6 +757,60 @@ lab_12/zad_3/MPI_simple.c.s:
 	$(MAKE) -f CMakeFiles/lab_12_zad_3.dir/build.make CMakeFiles/lab_12_zad_3.dir/lab_12/zad_3/MPI_simple.c.s
 .PHONY : lab_12/zad_3/MPI_simple.c.s
 
+lab_13/zad_1/heat.o: lab_13/zad_1/heat.c.o
+
+.PHONY : lab_13/zad_1/heat.o
+
+# target to build an object file
+lab_13/zad_1/heat.c.o:
+	$(MAKE) -f CMakeFiles/lab_13_zad_1.dir/build.make CMakeFiles/lab_13_zad_1.dir/lab_13/zad_1/heat.c.o
+.PHONY : lab_13/zad_1/heat.c.o
+
+lab_13/zad_1/heat.i: lab_13/zad_1/heat.c.i
+
+.PHONY : lab_13/zad_1/heat.i
+
+# target to preprocess a source file
+lab_13/zad_1/heat.c.i:
+	$(MAKE) -f CMakeFiles/lab_13_zad_1.dir/build.make CMakeFiles/lab_13_zad_1.dir/lab_13/zad_1/heat.c.i
+.PHONY : lab_13/zad_1/heat.c.i
+
+lab_13/zad_1/heat.s: lab_13/zad_1/heat.c.s
+
+.PHONY : lab_13/zad_1/heat.s
+
+# target to generate assembly for a file
+lab_13/zad_1/heat.c.s:
+	$(MAKE) -f CMakeFiles/lab_13_zad_1.dir/build.make CMakeFiles/lab_13_zad_1.dir/lab_13/zad_1/heat.c.s
+.PHONY : lab_13/zad_1/heat.c.s
+
+lab_13/zad_2/pi.o: lab_13/zad_2/pi.c.o
+
+.PHONY : lab_13/zad_2/pi.o
+
+# target to build an object file
+lab_13/zad_2/pi.c.o:
+	$(MAKE) -f CMakeFiles/lab_13_zad_2.dir/build.make CMakeFiles/lab_13_zad_2.dir/lab_13/zad_2/pi.c.o
+.PHONY : lab_13/zad_2/pi.c.o
+
+lab_13/zad_2/pi.i: lab_13/zad_2/pi.c.i
+
+.PHONY : lab_13/zad_2/pi.i
+
+# target to preprocess a source file
+lab_13/zad_2/pi.c.i:
+	$(MAKE) -f CMakeFiles/lab_13_zad_2.dir/build.make CMakeFiles/lab_13_zad_2.dir/lab_13/zad_2/pi.c.i
+.PHONY : lab_13/zad_2/pi.c.i
+
+lab_13/zad_2/pi.s: lab_13/zad_2/pi.c.s
+
+.PHONY : lab_13/zad_2/pi.s
+
+# target to generate assembly for a file
+lab_13/zad_2/pi.c.s:
+	$(MAKE) -f CMakeFiles/lab_13_zad_2.dir/build.make CMakeFiles/lab_13_zad_2.dir/lab_13/zad_2/pi.c.s
+.PHONY : lab_13/zad_2/pi.c.s
+
 lab_2/clone.o: lab_2/clone.c.o
 
 .PHONY : lab_2/clone.o
@@ -1228,6 +1308,8 @@ help:
 	@echo "... depend"
 	@echo "... test"
 	@echo "... rebuild_cache"
+	@echo "... lab_13_zad_2"
+	@echo "... lab_13_zad_1"
 	@echo "... lab_5_zad_2"
 	@echo "... lab_7_zad_3"
 	@echo "... lab_5_zad_1"
@@ -1287,6 +1369,12 @@ help:
 	@echo "... lab_12/zad_3/MPI_simple.o"
 	@echo "... lab_12/zad_3/MPI_simple.i"
 	@echo "... lab_12/zad_3/MPI_simple.s"
+	@echo "... lab_13/zad_1/heat.o"
+	@echo "... lab_13/zad_1/heat.i"
+	@echo "... lab_13/zad_1/heat.s"
+	@echo "... lab_13/zad_2/pi.o"
+	@echo "... lab_13/zad_2/pi.i"
+	@echo "... lab_13/zad_2/pi.s"
 	@echo "... lab_2/clone.o"
 	@echo "... lab_2/clone.i"
 	@echo "... lab_2/clone.s"

@@ -122,12 +122,12 @@ void heat_part ( int n, int p, int id, double x_min, double x_max )
 
     if ( 0 < id )
     {
-      // DO UZUPELNIENIA
+      MPI_Send ( &h[1], 1, MPI_DOUBLE, id-1, tag, MPI_COMM_WORLD );
     }
 
     if ( id < p - 1 )
     {
-      // DO UZUPELNIENIA   
+      MPI_Recv ( &h[n+1], 1, MPI_DOUBLE, id+1, tag, MPI_COMM_WORLD, &status );
     }
 
 
@@ -168,13 +168,15 @@ void heat_part ( int n, int p, int id, double x_min, double x_max )
   }
   
   tag = 12;
-  
-  if ( 0 < id ) {
-    // DO UZUPELNIENIA
+
+  if ( 0 < id )
+  {
+    MPI_Send ( &h[1], 1, MPI_DOUBLE, id-1, tag, MPI_COMM_WORLD );
   }
-  
-  if ( id < p - 1 ) {
-    // DO UZUPELNIENIA
+
+  if ( id < p - 1 )
+  {
+    MPI_Recv ( &h[n+1], 1, MPI_DOUBLE, id+1, tag, MPI_COMM_WORLD, &status );
   }
   
   wtime = MPI_Wtime ( ) - wtime;
