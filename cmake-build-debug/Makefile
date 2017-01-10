@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /cygdrive/c/Users/Marian/ClionProjects/parallelprogrammingc/c
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/cygdrive/c/Users/Marian/.CLion2016.3/system/cygwin_cmake/bin/cmake.exe -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -88,6 +77,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/cygdrive/c/Users/Marian/.CLion2016.3/system/cygwin_cmake/bin/cmake.exe -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -122,30 +122,212 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named lab_11_zad_2
+# Target rules for targets named lab_5_zad_2
 
 # Build rule for target.
-lab_11_zad_2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lab_11_zad_2
-.PHONY : lab_11_zad_2
+lab_5_zad_2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_5_zad_2
+.PHONY : lab_5_zad_2
 
 # fast build rule for target.
-lab_11_zad_2/fast:
-	$(MAKE) -f CMakeFiles/lab_11_zad_2.dir/build.make CMakeFiles/lab_11_zad_2.dir/build
-.PHONY : lab_11_zad_2/fast
+lab_5_zad_2/fast:
+	$(MAKE) -f CMakeFiles/lab_5_zad_2.dir/build.make CMakeFiles/lab_5_zad_2.dir/build
+.PHONY : lab_5_zad_2/fast
 
 #=============================================================================
-# Target rules for targets named lab_9_zad_2
+# Target rules for targets named lab_7_zad_3
 
 # Build rule for target.
-lab_9_zad_2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lab_9_zad_2
-.PHONY : lab_9_zad_2
+lab_7_zad_3: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_7_zad_3
+.PHONY : lab_7_zad_3
 
 # fast build rule for target.
-lab_9_zad_2/fast:
-	$(MAKE) -f CMakeFiles/lab_9_zad_2.dir/build.make CMakeFiles/lab_9_zad_2.dir/build
-.PHONY : lab_9_zad_2/fast
+lab_7_zad_3/fast:
+	$(MAKE) -f CMakeFiles/lab_7_zad_3.dir/build.make CMakeFiles/lab_7_zad_3.dir/build
+.PHONY : lab_7_zad_3/fast
+
+#=============================================================================
+# Target rules for targets named lab_5_zad_1
+
+# Build rule for target.
+lab_5_zad_1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_5_zad_1
+.PHONY : lab_5_zad_1
+
+# fast build rule for target.
+lab_5_zad_1/fast:
+	$(MAKE) -f CMakeFiles/lab_5_zad_1.dir/build.make CMakeFiles/lab_5_zad_1.dir/build
+.PHONY : lab_5_zad_1/fast
+
+#=============================================================================
+# Target rules for targets named lab_2_zad_1
+
+# Build rule for target.
+lab_2_zad_1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_2_zad_1
+.PHONY : lab_2_zad_1
+
+# fast build rule for target.
+lab_2_zad_1/fast:
+	$(MAKE) -f CMakeFiles/lab_2_zad_1.dir/build.make CMakeFiles/lab_2_zad_1.dir/build
+.PHONY : lab_2_zad_1/fast
+
+#=============================================================================
+# Target rules for targets named lab_10_zad_2
+
+# Build rule for target.
+lab_10_zad_2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_10_zad_2
+.PHONY : lab_10_zad_2
+
+# fast build rule for target.
+lab_10_zad_2/fast:
+	$(MAKE) -f CMakeFiles/lab_10_zad_2.dir/build.make CMakeFiles/lab_10_zad_2.dir/build
+.PHONY : lab_10_zad_2/fast
+
+#=============================================================================
+# Target rules for targets named lab_4_zad_1
+
+# Build rule for target.
+lab_4_zad_1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_4_zad_1
+.PHONY : lab_4_zad_1
+
+# fast build rule for target.
+lab_4_zad_1/fast:
+	$(MAKE) -f CMakeFiles/lab_4_zad_1.dir/build.make CMakeFiles/lab_4_zad_1.dir/build
+.PHONY : lab_4_zad_1/fast
+
+#=============================================================================
+# Target rules for targets named lab_3_zad_2
+
+# Build rule for target.
+lab_3_zad_2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_3_zad_2
+.PHONY : lab_3_zad_2
+
+# fast build rule for target.
+lab_3_zad_2/fast:
+	$(MAKE) -f CMakeFiles/lab_3_zad_2.dir/build.make CMakeFiles/lab_3_zad_2.dir/build
+.PHONY : lab_3_zad_2/fast
+
+#=============================================================================
+# Target rules for targets named lab_3_zad_1
+
+# Build rule for target.
+lab_3_zad_1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_3_zad_1
+.PHONY : lab_3_zad_1
+
+# fast build rule for target.
+lab_3_zad_1/fast:
+	$(MAKE) -f CMakeFiles/lab_3_zad_1.dir/build.make CMakeFiles/lab_3_zad_1.dir/build
+.PHONY : lab_3_zad_1/fast
+
+#=============================================================================
+# Target rules for targets named lab_11_zad_3
+
+# Build rule for target.
+lab_11_zad_3: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_11_zad_3
+.PHONY : lab_11_zad_3
+
+# fast build rule for target.
+lab_11_zad_3/fast:
+	$(MAKE) -f CMakeFiles/lab_11_zad_3.dir/build.make CMakeFiles/lab_11_zad_3.dir/build
+.PHONY : lab_11_zad_3/fast
+
+#=============================================================================
+# Target rules for targets named lab_10_zad_1
+
+# Build rule for target.
+lab_10_zad_1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_10_zad_1
+.PHONY : lab_10_zad_1
+
+# fast build rule for target.
+lab_10_zad_1/fast:
+	$(MAKE) -f CMakeFiles/lab_10_zad_1.dir/build.make CMakeFiles/lab_10_zad_1.dir/build
+.PHONY : lab_10_zad_1/fast
+
+#=============================================================================
+# Target rules for targets named lab_2_zad_2
+
+# Build rule for target.
+lab_2_zad_2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_2_zad_2
+.PHONY : lab_2_zad_2
+
+# fast build rule for target.
+lab_2_zad_2/fast:
+	$(MAKE) -f CMakeFiles/lab_2_zad_2.dir/build.make CMakeFiles/lab_2_zad_2.dir/build
+.PHONY : lab_2_zad_2/fast
+
+#=============================================================================
+# Target rules for targets named lab_3_zad_3
+
+# Build rule for target.
+lab_3_zad_3: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_3_zad_3
+.PHONY : lab_3_zad_3
+
+# fast build rule for target.
+lab_3_zad_3/fast:
+	$(MAKE) -f CMakeFiles/lab_3_zad_3.dir/build.make CMakeFiles/lab_3_zad_3.dir/build
+.PHONY : lab_3_zad_3/fast
+
+#=============================================================================
+# Target rules for targets named lab_4_zad_2
+
+# Build rule for target.
+lab_4_zad_2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_4_zad_2
+.PHONY : lab_4_zad_2
+
+# fast build rule for target.
+lab_4_zad_2/fast:
+	$(MAKE) -f CMakeFiles/lab_4_zad_2.dir/build.make CMakeFiles/lab_4_zad_2.dir/build
+.PHONY : lab_4_zad_2/fast
+
+#=============================================================================
+# Target rules for targets named lab_1_zad_1
+
+# Build rule for target.
+lab_1_zad_1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_1_zad_1
+.PHONY : lab_1_zad_1
+
+# fast build rule for target.
+lab_1_zad_1/fast:
+	$(MAKE) -f CMakeFiles/lab_1_zad_1.dir/build.make CMakeFiles/lab_1_zad_1.dir/build
+.PHONY : lab_1_zad_1/fast
+
+#=============================================================================
+# Target rules for targets named lab_7_zad_1
+
+# Build rule for target.
+lab_7_zad_1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_7_zad_1
+.PHONY : lab_7_zad_1
+
+# fast build rule for target.
+lab_7_zad_1/fast:
+	$(MAKE) -f CMakeFiles/lab_7_zad_1.dir/build.make CMakeFiles/lab_7_zad_1.dir/build
+.PHONY : lab_7_zad_1/fast
+
+#=============================================================================
+# Target rules for targets named lab_7_zad_2
+
+# Build rule for target.
+lab_7_zad_2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_7_zad_2
+.PHONY : lab_7_zad_2
+
+# fast build rule for target.
+lab_7_zad_2/fast:
+	$(MAKE) -f CMakeFiles/lab_7_zad_2.dir/build.make CMakeFiles/lab_7_zad_2.dir/build
+.PHONY : lab_7_zad_2/fast
 
 #=============================================================================
 # Target rules for targets named lab_9_zad_1
@@ -174,199 +356,56 @@ lab_11_zad_1/fast:
 .PHONY : lab_11_zad_1/fast
 
 #=============================================================================
-# Target rules for targets named lab_7_zad_2
+# Target rules for targets named lab_9_zad_2
 
 # Build rule for target.
-lab_7_zad_2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lab_7_zad_2
-.PHONY : lab_7_zad_2
+lab_9_zad_2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_9_zad_2
+.PHONY : lab_9_zad_2
 
 # fast build rule for target.
-lab_7_zad_2/fast:
-	$(MAKE) -f CMakeFiles/lab_7_zad_2.dir/build.make CMakeFiles/lab_7_zad_2.dir/build
-.PHONY : lab_7_zad_2/fast
+lab_9_zad_2/fast:
+	$(MAKE) -f CMakeFiles/lab_9_zad_2.dir/build.make CMakeFiles/lab_9_zad_2.dir/build
+.PHONY : lab_9_zad_2/fast
 
 #=============================================================================
-# Target rules for targets named lab_7_zad_1
+# Target rules for targets named lab_11_zad_2
 
 # Build rule for target.
-lab_7_zad_1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lab_7_zad_1
-.PHONY : lab_7_zad_1
+lab_11_zad_2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_11_zad_2
+.PHONY : lab_11_zad_2
 
 # fast build rule for target.
-lab_7_zad_1/fast:
-	$(MAKE) -f CMakeFiles/lab_7_zad_1.dir/build.make CMakeFiles/lab_7_zad_1.dir/build
-.PHONY : lab_7_zad_1/fast
+lab_11_zad_2/fast:
+	$(MAKE) -f CMakeFiles/lab_11_zad_2.dir/build.make CMakeFiles/lab_11_zad_2.dir/build
+.PHONY : lab_11_zad_2/fast
 
 #=============================================================================
-# Target rules for targets named lab_1_zad_1
+# Target rules for targets named lab_12_zad_2
 
 # Build rule for target.
-lab_1_zad_1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lab_1_zad_1
-.PHONY : lab_1_zad_1
+lab_12_zad_2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_12_zad_2
+.PHONY : lab_12_zad_2
 
 # fast build rule for target.
-lab_1_zad_1/fast:
-	$(MAKE) -f CMakeFiles/lab_1_zad_1.dir/build.make CMakeFiles/lab_1_zad_1.dir/build
-.PHONY : lab_1_zad_1/fast
+lab_12_zad_2/fast:
+	$(MAKE) -f CMakeFiles/lab_12_zad_2.dir/build.make CMakeFiles/lab_12_zad_2.dir/build
+.PHONY : lab_12_zad_2/fast
 
 #=============================================================================
-# Target rules for targets named lab_3_zad_3
+# Target rules for targets named lab_12_zad_3
 
 # Build rule for target.
-lab_3_zad_3: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lab_3_zad_3
-.PHONY : lab_3_zad_3
+lab_12_zad_3: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab_12_zad_3
+.PHONY : lab_12_zad_3
 
 # fast build rule for target.
-lab_3_zad_3/fast:
-	$(MAKE) -f CMakeFiles/lab_3_zad_3.dir/build.make CMakeFiles/lab_3_zad_3.dir/build
-.PHONY : lab_3_zad_3/fast
-
-#=============================================================================
-# Target rules for targets named lab_2_zad_2
-
-# Build rule for target.
-lab_2_zad_2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lab_2_zad_2
-.PHONY : lab_2_zad_2
-
-# fast build rule for target.
-lab_2_zad_2/fast:
-	$(MAKE) -f CMakeFiles/lab_2_zad_2.dir/build.make CMakeFiles/lab_2_zad_2.dir/build
-.PHONY : lab_2_zad_2/fast
-
-#=============================================================================
-# Target rules for targets named lab_10_zad_1
-
-# Build rule for target.
-lab_10_zad_1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lab_10_zad_1
-.PHONY : lab_10_zad_1
-
-# fast build rule for target.
-lab_10_zad_1/fast:
-	$(MAKE) -f CMakeFiles/lab_10_zad_1.dir/build.make CMakeFiles/lab_10_zad_1.dir/build
-.PHONY : lab_10_zad_1/fast
-
-#=============================================================================
-# Target rules for targets named lab_3_zad_1
-
-# Build rule for target.
-lab_3_zad_1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lab_3_zad_1
-.PHONY : lab_3_zad_1
-
-# fast build rule for target.
-lab_3_zad_1/fast:
-	$(MAKE) -f CMakeFiles/lab_3_zad_1.dir/build.make CMakeFiles/lab_3_zad_1.dir/build
-.PHONY : lab_3_zad_1/fast
-
-#=============================================================================
-# Target rules for targets named lab_3_zad_2
-
-# Build rule for target.
-lab_3_zad_2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lab_3_zad_2
-.PHONY : lab_3_zad_2
-
-# fast build rule for target.
-lab_3_zad_2/fast:
-	$(MAKE) -f CMakeFiles/lab_3_zad_2.dir/build.make CMakeFiles/lab_3_zad_2.dir/build
-.PHONY : lab_3_zad_2/fast
-
-#=============================================================================
-# Target rules for targets named lab_4_zad_1
-
-# Build rule for target.
-lab_4_zad_1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lab_4_zad_1
-.PHONY : lab_4_zad_1
-
-# fast build rule for target.
-lab_4_zad_1/fast:
-	$(MAKE) -f CMakeFiles/lab_4_zad_1.dir/build.make CMakeFiles/lab_4_zad_1.dir/build
-.PHONY : lab_4_zad_1/fast
-
-#=============================================================================
-# Target rules for targets named lab_4_zad_2
-
-# Build rule for target.
-lab_4_zad_2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lab_4_zad_2
-.PHONY : lab_4_zad_2
-
-# fast build rule for target.
-lab_4_zad_2/fast:
-	$(MAKE) -f CMakeFiles/lab_4_zad_2.dir/build.make CMakeFiles/lab_4_zad_2.dir/build
-.PHONY : lab_4_zad_2/fast
-
-#=============================================================================
-# Target rules for targets named lab_10_zad_2
-
-# Build rule for target.
-lab_10_zad_2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lab_10_zad_2
-.PHONY : lab_10_zad_2
-
-# fast build rule for target.
-lab_10_zad_2/fast:
-	$(MAKE) -f CMakeFiles/lab_10_zad_2.dir/build.make CMakeFiles/lab_10_zad_2.dir/build
-.PHONY : lab_10_zad_2/fast
-
-#=============================================================================
-# Target rules for targets named lab_2_zad_1
-
-# Build rule for target.
-lab_2_zad_1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lab_2_zad_1
-.PHONY : lab_2_zad_1
-
-# fast build rule for target.
-lab_2_zad_1/fast:
-	$(MAKE) -f CMakeFiles/lab_2_zad_1.dir/build.make CMakeFiles/lab_2_zad_1.dir/build
-.PHONY : lab_2_zad_1/fast
-
-#=============================================================================
-# Target rules for targets named lab_5_zad_1
-
-# Build rule for target.
-lab_5_zad_1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lab_5_zad_1
-.PHONY : lab_5_zad_1
-
-# fast build rule for target.
-lab_5_zad_1/fast:
-	$(MAKE) -f CMakeFiles/lab_5_zad_1.dir/build.make CMakeFiles/lab_5_zad_1.dir/build
-.PHONY : lab_5_zad_1/fast
-
-#=============================================================================
-# Target rules for targets named lab_7_zad_3
-
-# Build rule for target.
-lab_7_zad_3: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lab_7_zad_3
-.PHONY : lab_7_zad_3
-
-# fast build rule for target.
-lab_7_zad_3/fast:
-	$(MAKE) -f CMakeFiles/lab_7_zad_3.dir/build.make CMakeFiles/lab_7_zad_3.dir/build
-.PHONY : lab_7_zad_3/fast
-
-#=============================================================================
-# Target rules for targets named lab_5_zad_2
-
-# Build rule for target.
-lab_5_zad_2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lab_5_zad_2
-.PHONY : lab_5_zad_2
-
-# fast build rule for target.
-lab_5_zad_2/fast:
-	$(MAKE) -f CMakeFiles/lab_5_zad_2.dir/build.make CMakeFiles/lab_5_zad_2.dir/build
-.PHONY : lab_5_zad_2/fast
+lab_12_zad_3/fast:
+	$(MAKE) -f CMakeFiles/lab_12_zad_3.dir/build.make CMakeFiles/lab_12_zad_3.dir/build
+.PHONY : lab_12_zad_3/fast
 
 lab_1/moj_program.o: lab_1/moj_program.c.o
 
@@ -610,6 +649,87 @@ lab_11/zad_2/test_search_max_openmp.s: lab_11/zad_2/test_search_max_openmp.c.s
 lab_11/zad_2/test_search_max_openmp.c.s:
 	$(MAKE) -f CMakeFiles/lab_11_zad_2.dir/build.make CMakeFiles/lab_11_zad_2.dir/lab_11/zad_2/test_search_max_openmp.c.s
 .PHONY : lab_11/zad_2/test_search_max_openmp.c.s
+
+lab_11/zad_3/calka.o: lab_11/zad_3/calka.c.o
+
+.PHONY : lab_11/zad_3/calka.o
+
+# target to build an object file
+lab_11/zad_3/calka.c.o:
+	$(MAKE) -f CMakeFiles/lab_11_zad_3.dir/build.make CMakeFiles/lab_11_zad_3.dir/lab_11/zad_3/calka.c.o
+.PHONY : lab_11/zad_3/calka.c.o
+
+lab_11/zad_3/calka.i: lab_11/zad_3/calka.c.i
+
+.PHONY : lab_11/zad_3/calka.i
+
+# target to preprocess a source file
+lab_11/zad_3/calka.c.i:
+	$(MAKE) -f CMakeFiles/lab_11_zad_3.dir/build.make CMakeFiles/lab_11_zad_3.dir/lab_11/zad_3/calka.c.i
+.PHONY : lab_11/zad_3/calka.c.i
+
+lab_11/zad_3/calka.s: lab_11/zad_3/calka.c.s
+
+.PHONY : lab_11/zad_3/calka.s
+
+# target to generate assembly for a file
+lab_11/zad_3/calka.c.s:
+	$(MAKE) -f CMakeFiles/lab_11_zad_3.dir/build.make CMakeFiles/lab_11_zad_3.dir/lab_11/zad_3/calka.c.s
+.PHONY : lab_11/zad_3/calka.c.s
+
+lab_12/zad_2/MPI_simple.o: lab_12/zad_2/MPI_simple.c.o
+
+.PHONY : lab_12/zad_2/MPI_simple.o
+
+# target to build an object file
+lab_12/zad_2/MPI_simple.c.o:
+	$(MAKE) -f CMakeFiles/lab_12_zad_2.dir/build.make CMakeFiles/lab_12_zad_2.dir/lab_12/zad_2/MPI_simple.c.o
+.PHONY : lab_12/zad_2/MPI_simple.c.o
+
+lab_12/zad_2/MPI_simple.i: lab_12/zad_2/MPI_simple.c.i
+
+.PHONY : lab_12/zad_2/MPI_simple.i
+
+# target to preprocess a source file
+lab_12/zad_2/MPI_simple.c.i:
+	$(MAKE) -f CMakeFiles/lab_12_zad_2.dir/build.make CMakeFiles/lab_12_zad_2.dir/lab_12/zad_2/MPI_simple.c.i
+.PHONY : lab_12/zad_2/MPI_simple.c.i
+
+lab_12/zad_2/MPI_simple.s: lab_12/zad_2/MPI_simple.c.s
+
+.PHONY : lab_12/zad_2/MPI_simple.s
+
+# target to generate assembly for a file
+lab_12/zad_2/MPI_simple.c.s:
+	$(MAKE) -f CMakeFiles/lab_12_zad_2.dir/build.make CMakeFiles/lab_12_zad_2.dir/lab_12/zad_2/MPI_simple.c.s
+.PHONY : lab_12/zad_2/MPI_simple.c.s
+
+lab_12/zad_3/MPI_simple.o: lab_12/zad_3/MPI_simple.c.o
+
+.PHONY : lab_12/zad_3/MPI_simple.o
+
+# target to build an object file
+lab_12/zad_3/MPI_simple.c.o:
+	$(MAKE) -f CMakeFiles/lab_12_zad_3.dir/build.make CMakeFiles/lab_12_zad_3.dir/lab_12/zad_3/MPI_simple.c.o
+.PHONY : lab_12/zad_3/MPI_simple.c.o
+
+lab_12/zad_3/MPI_simple.i: lab_12/zad_3/MPI_simple.c.i
+
+.PHONY : lab_12/zad_3/MPI_simple.i
+
+# target to preprocess a source file
+lab_12/zad_3/MPI_simple.c.i:
+	$(MAKE) -f CMakeFiles/lab_12_zad_3.dir/build.make CMakeFiles/lab_12_zad_3.dir/lab_12/zad_3/MPI_simple.c.i
+.PHONY : lab_12/zad_3/MPI_simple.c.i
+
+lab_12/zad_3/MPI_simple.s: lab_12/zad_3/MPI_simple.c.s
+
+.PHONY : lab_12/zad_3/MPI_simple.s
+
+# target to generate assembly for a file
+lab_12/zad_3/MPI_simple.c.s:
+	$(MAKE) -f CMakeFiles/lab_12_zad_3.dir/build.make CMakeFiles/lab_12_zad_3.dir/lab_12/zad_3/MPI_simple.c.s
+.PHONY : lab_12/zad_3/MPI_simple.c.s
 
 lab_2/clone.o: lab_2/clone.c.o
 
@@ -1076,8 +1196,8 @@ pomiar_czasu/pomiar_czasu.o: pomiar_czasu/pomiar_czasu.c.o
 
 # target to build an object file
 pomiar_czasu/pomiar_czasu.c.o:
-	$(MAKE) -f CMakeFiles/lab_1_zad_1.dir/build.make CMakeFiles/lab_1_zad_1.dir/pomiar_czasu/pomiar_czasu.c.o
 	$(MAKE) -f CMakeFiles/lab_5_zad_2.dir/build.make CMakeFiles/lab_5_zad_2.dir/pomiar_czasu/pomiar_czasu.c.o
+	$(MAKE) -f CMakeFiles/lab_1_zad_1.dir/build.make CMakeFiles/lab_1_zad_1.dir/pomiar_czasu/pomiar_czasu.c.o
 .PHONY : pomiar_czasu/pomiar_czasu.c.o
 
 pomiar_czasu/pomiar_czasu.i: pomiar_czasu/pomiar_czasu.c.i
@@ -1086,8 +1206,8 @@ pomiar_czasu/pomiar_czasu.i: pomiar_czasu/pomiar_czasu.c.i
 
 # target to preprocess a source file
 pomiar_czasu/pomiar_czasu.c.i:
-	$(MAKE) -f CMakeFiles/lab_1_zad_1.dir/build.make CMakeFiles/lab_1_zad_1.dir/pomiar_czasu/pomiar_czasu.c.i
 	$(MAKE) -f CMakeFiles/lab_5_zad_2.dir/build.make CMakeFiles/lab_5_zad_2.dir/pomiar_czasu/pomiar_czasu.c.i
+	$(MAKE) -f CMakeFiles/lab_1_zad_1.dir/build.make CMakeFiles/lab_1_zad_1.dir/pomiar_czasu/pomiar_czasu.c.i
 .PHONY : pomiar_czasu/pomiar_czasu.c.i
 
 pomiar_czasu/pomiar_czasu.s: pomiar_czasu/pomiar_czasu.c.s
@@ -1096,8 +1216,8 @@ pomiar_czasu/pomiar_czasu.s: pomiar_czasu/pomiar_czasu.c.s
 
 # target to generate assembly for a file
 pomiar_czasu/pomiar_czasu.c.s:
-	$(MAKE) -f CMakeFiles/lab_1_zad_1.dir/build.make CMakeFiles/lab_1_zad_1.dir/pomiar_czasu/pomiar_czasu.c.s
 	$(MAKE) -f CMakeFiles/lab_5_zad_2.dir/build.make CMakeFiles/lab_5_zad_2.dir/pomiar_czasu/pomiar_czasu.c.s
+	$(MAKE) -f CMakeFiles/lab_1_zad_1.dir/build.make CMakeFiles/lab_1_zad_1.dir/pomiar_czasu/pomiar_czasu.c.s
 .PHONY : pomiar_czasu/pomiar_czasu.c.s
 
 # Help Target
@@ -1106,28 +1226,31 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... lab_11_zad_2"
 	@echo "... test"
-	@echo "... lab_9_zad_2"
+	@echo "... rebuild_cache"
+	@echo "... lab_5_zad_2"
+	@echo "... lab_7_zad_3"
+	@echo "... lab_5_zad_1"
+	@echo "... lab_2_zad_1"
+	@echo "... lab_10_zad_2"
+	@echo "... edit_cache"
+	@echo "... lab_4_zad_1"
+	@echo "... lab_3_zad_2"
+	@echo "... lab_3_zad_1"
+	@echo "... lab_11_zad_3"
+	@echo "... lab_10_zad_1"
+	@echo "... lab_2_zad_2"
+	@echo "... lab_3_zad_3"
+	@echo "... lab_4_zad_2"
+	@echo "... lab_1_zad_1"
+	@echo "... lab_7_zad_1"
+	@echo "... lab_7_zad_2"
 	@echo "... lab_9_zad_1"
 	@echo "... lab_11_zad_1"
-	@echo "... lab_7_zad_2"
-	@echo "... lab_7_zad_1"
-	@echo "... lab_1_zad_1"
-	@echo "... lab_3_zad_3"
-	@echo "... lab_2_zad_2"
-	@echo "... lab_10_zad_1"
-	@echo "... lab_3_zad_1"
-	@echo "... lab_3_zad_2"
-	@echo "... lab_4_zad_1"
-	@echo "... rebuild_cache"
-	@echo "... lab_4_zad_2"
-	@echo "... lab_10_zad_2"
-	@echo "... lab_2_zad_1"
-	@echo "... lab_5_zad_1"
-	@echo "... lab_7_zad_3"
-	@echo "... lab_5_zad_2"
+	@echo "... lab_9_zad_2"
+	@echo "... lab_11_zad_2"
+	@echo "... lab_12_zad_2"
+	@echo "... lab_12_zad_3"
 	@echo "... lab_1/moj_program.o"
 	@echo "... lab_1/moj_program.i"
 	@echo "... lab_1/moj_program.s"
@@ -1155,6 +1278,15 @@ help:
 	@echo "... lab_11/zad_2/test_search_max_openmp.o"
 	@echo "... lab_11/zad_2/test_search_max_openmp.i"
 	@echo "... lab_11/zad_2/test_search_max_openmp.s"
+	@echo "... lab_11/zad_3/calka.o"
+	@echo "... lab_11/zad_3/calka.i"
+	@echo "... lab_11/zad_3/calka.s"
+	@echo "... lab_12/zad_2/MPI_simple.o"
+	@echo "... lab_12/zad_2/MPI_simple.i"
+	@echo "... lab_12/zad_2/MPI_simple.s"
+	@echo "... lab_12/zad_3/MPI_simple.o"
+	@echo "... lab_12/zad_3/MPI_simple.i"
+	@echo "... lab_12/zad_3/MPI_simple.s"
 	@echo "... lab_2/clone.o"
 	@echo "... lab_2/clone.i"
 	@echo "... lab_2/clone.s"

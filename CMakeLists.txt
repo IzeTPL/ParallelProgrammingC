@@ -11,6 +11,11 @@ if (OPENMP_FOUND)
     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
 endif()
 
+
+find_package(MPI)
+
+include_directories(${MPI_INCLUDE_PATH})
+
 #LAB 1
 add_executable(lab_1_zad_1 lab_1/moj_program.c pomiar_czasu/pomiar_czasu.c)
 
@@ -54,5 +59,9 @@ target_link_libraries(lab_11_zad_2 m)
 add_executable(lab_11_zad_3 lab_11/zad_3/calka.c)
 target_link_libraries(lab_11_zad_3 m)
 
+#lab 12
+add_executable(lab_12_zad_2 lab_12/zad_2/MPI_simple.c)
+target_link_libraries(lab_12_zad_2 mpi)
 
-
+add_executable(lab_12_zad_3 lab_12/zad_3/MPI_simple.c)
+target_link_libraries(lab_12_zad_3 mpi)
