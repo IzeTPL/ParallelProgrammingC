@@ -4,11 +4,13 @@
 
 # include "mpi.h"
 
+double pi = 0.0;
+
 int main ( int argc, char *argv[] );
 
-void count_pi_part(int p, int id, long int start, long int end) {
+void count_pi_part(int p, int id, int start, int end) {
   double tmp = 0.0, a_n;
-  long int i;
+  int i;
 
   for (i = start; i >= end; i--) {
     if (i % 2 == 0) {
@@ -20,7 +22,7 @@ void count_pi_part(int p, int id, long int start, long int end) {
     tmp = tmp + a_n;
   }
 
-  MPI_Send(&tmp, 1, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD);
+  MPI_Reduce(&tmp, &pi, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
 }
 
@@ -29,7 +31,6 @@ int main ( int argc, char *argv[] )
   int id; // rank
   int p;  // size
   int n; //accuracy
-    double pi;
     MPI_Status status;
 
   MPI_Init ( &argc, &argv );
@@ -40,22 +41,25 @@ int main ( int argc, char *argv[] )
 
   if(id == 0) {
 
-    scanf("Podaj dokladnosc: %d", &n);
-      //MPI_Gather(&pi, 1, MPI_DOUBLE, )
-
-  } else {
-
-      MPI_Bcast(&n, 1, MPI_LONG_INT, 0, MPI_COMM_WORLD);
+    //scanf("Podaj dokladnosc: %d", &n);
+    n = 10000;
 
   }
 
-  long int end = id * ( n / p );
+      MPI_Bcast(&n, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
-  long int start = id + 1 * ( n / p );
+
+  int end = id * ( n / p );
+
+  int start = id + 1 * ( n / p );
 
   count_pi_part(p, id, start, end);
 
-  //MPI_Barrier( MPI_COMM_WORLD );
+  if(id == 0) {
+    //MPI_Barrier(MPI_COMM_WORLD);
+    pi *= 4;
+    printf("%d PI = %lf\n", id, pi);
+  }
 
   MPI_Finalize ( );
 
