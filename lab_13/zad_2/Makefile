@@ -21,14 +21,14 @@ LIB = -lm
 
 # zaleznosci i komendy
 
-heat: heat.o
-	$(LINK) $(OPT) heat.o -o heat $(LIB)
+pi: pi.o
+	$(LINK) $(OPT) pi.o -o pi $(LIB)
 
-heat.o: heat.c
-	$(CCOMP) -c $(OPT) heat.c $(INC)
+pi.o: pi.c
+	$(CCOMP) -c $(OPT) pi.c $(INC)
 
 run:
-	$(MPIRUN) -np 8 ./heat
+	$(MPIRUN) -np 4 ./pi
 
 clean:
 	rm -f *.o

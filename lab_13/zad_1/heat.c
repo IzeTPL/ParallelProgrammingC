@@ -1,6 +1,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <math.h>
+#include <unistd.h>
 
 # include "mpi.h"
 
@@ -43,7 +44,7 @@ int main ( int argc, char *argv[] )
 
   heat_part ( n, p, id, x_min, x_max ); // obliczenia dla pojedynczego wezla
 
-  //MPI_Barrier( MPI_COMM_WORLD );
+  MPI_Barrier( MPI_COMM_WORLD );
 
   MPI_Finalize ( );
 
@@ -181,30 +182,65 @@ void heat_part ( int n, int p, int id, double x_min, double x_max )
   
   wtime = MPI_Wtime ( ) - wtime;
 
-  if ( id == 0 )
-  {
+  int idcomm = id;
+
+  if (id == 0){
     printf ( "\n" );
     printf ( "  Wall clock elapsed seconds = %f\n", wtime );
+
+    printf ( "%2d  T= %f\n", id, t );
+    printf ( "%2d  X= ", id );
+    for ( i = 0; i <= n + 1; i++ )
+    {
+      printf ( "%7.2f", x[i] );
+    }
+    printf ( "\n" );
+    printf ( "%2d  H= ", id );
+    for ( i = 0; i <= n + 1; i++ )
+    {
+      printf ( "%7.2f", h[i] );
+    }
+    printf ( "\n" );
+
+    free ( h );
+    free ( h_new );
+    free ( x );
+
+    MPI_Send( &idcomm, 1, MPI_INT, id + 1, 0, MPI_COMM_WORLD );
+
+    //printf("jestem %d, Wysyłam do procesu o randze (i=%d):\n", id, id + 1 );
+  } else {
+
+    MPI_Recv( &idcomm, 1, MPI_INT, id - 1, 0 , MPI_COMM_WORLD, &status );
+
+    printf ( "%2d  T= %f\n", id, t );
+    printf ( "%2d  X= ", id );
+    for ( i = 0; i <= n + 1; i++ )
+    {
+      printf ( "%7.2f", x[i] );
+    }
+    printf ( "\n" );
+    printf ( "%2d  H= ", id );
+    for ( i = 0; i <= n + 1; i++ )
+    {
+      printf ( "%7.2f", h[i] );
+    }
+    printf ( "\n" );
+
+    free ( h );
+    free ( h_new );
+    free ( x );
+
+    //printf("jestem %d, Dane od procesu o randze (i=%d)\n", id, status.MPI_SOURCE );
+    if(id != p - 1) {
+      MPI_Send(&idcomm, 1, MPI_INT, id + 1, 0, MPI_COMM_WORLD);
+      //printf("jestem %d, Wysyłam do procesu o randze (i=%d):\n", id, id + 1);
+    }
+
   }
 
   // wydruk wyniku
-  printf ( "%2d  T= %f\n", id, t );
-  printf ( "%2d  X= ", id );
-  for ( i = 0; i <= n + 1; i++ )
-  {
-    printf ( "%7.2f", x[i] );
-  }
-  printf ( "\n" );
-  printf ( "%2d  H= ", id );
-  for ( i = 0; i <= n + 1; i++ )
-  {
-    printf ( "%7.2f", h[i] );
-  }
-  printf ( "\n" );
 
-  free ( h );
-  free ( h_new );
-  free ( x );
 
   return;
 }
